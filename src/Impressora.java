@@ -114,7 +114,7 @@ public class Impressora {
             System.out.println("Erro ao imprimir XML SAT. Retorno: " + retorno);
         }
     }
-    git merge --abort
+
     void imprimirXMLCancelamento(String conteudoXML) {
         int retorno = ImpressoraDLL.INSTANCE.ImprimeXMLCancelamentoSAT(conteudoXML, ASS_QRCODE_CANCELAMENTO, 0);
         if (retorno == 0) {
@@ -154,7 +154,7 @@ public class Impressora {
     }
 
     void statusPapel() {
-        int retorno = ImpressoraDLL.INSTANCE.StatusImpressora(3); // 3 = sensor de papel
+        int retorno = ImpressoraDLL.INSTANCE.StatusImpressora(3);
         switch (retorno) {
             case 5:
                 System.out.println("Status: tem papel.");
@@ -170,7 +170,6 @@ public class Impressora {
         }
     }
 
-   =
     private void cortar() {
         int retorno = ImpressoraDLL.INSTANCE.Corte(5);
         if (retorno != 0) {
